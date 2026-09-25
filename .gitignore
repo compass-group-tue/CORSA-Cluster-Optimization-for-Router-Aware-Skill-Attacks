@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+*.swp
+
+# CORSA runtime / scratch (never commit)
+.corsa_scratch/
+results/
+results_*/
+logs/
+*.log
+
+# Model / API caches
+.cache/
+hf_cache/
+
+# Optimized skill artifacts (operational — do not commit in the public repo)
+/optimized_skills/
+/data/generalization/
+
+# Secrets
+.env
+*_key
+*.key
+
+# Named research outputs, including custom output directories
+stage_a_winner.json
+stage_b_winner.json
+winner_observations.json
+observations.jsonl
+round_[0-9]*/
+paraphrase.jsonl
+synthetic.jsonl
+rows.jsonl
+raw_prompt.txt
+domains_grouping.json
+super_category_labels.json
+per_cluster_counts.json
+task_categories.json
+!/data/task_categorization/task_categories.json
+
+# Router caches if configured inside this checkout
+native_embeddings.sqlite3*
+gemini-embedding-*.sqlite3*
+
+# Frozen retrieval matrices and package-scanner observations
+scanner_rows.jsonl
+hit_at_1_macro.csv
+hit_at_1_micro.csv
+matrix.md
+
+# Internal development reports
+/docs/cleanup_report.md
+/docs/integration_report.md

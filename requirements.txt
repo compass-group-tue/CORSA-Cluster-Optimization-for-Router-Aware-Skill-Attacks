@@ -1,0 +1,11 @@
+torch
+transformers>=4.51.0
+huggingface_hub
+numpy
+tqdm
+sentencepiece
+safetensors
+openai
+FlagEmbedding>=1.3.5
+tiktoken
+sentence-transformers>=5.3
