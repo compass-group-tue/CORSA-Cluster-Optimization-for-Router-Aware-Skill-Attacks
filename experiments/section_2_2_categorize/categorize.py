@@ -1,10 +1,5 @@
 """Group SkillsBench application domains into eight task clusters.
 
-Reads domains from SkillRouter tasks.jsonl and requests an LLM assignment
-to eight fixed categories. Writes task assignments and per-cluster counts
-under --out_dir. Downstream commands use the pinned assignments unless
-an alternative mapping is explicitly configured.
-
 Outputs:
   task_categories.json         task ID to category mapping
   super_category_labels.json   category labels, descriptions and domains
