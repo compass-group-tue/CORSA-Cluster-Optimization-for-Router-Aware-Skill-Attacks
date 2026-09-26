@@ -1,4 +1,4 @@
-"""Pre-retrieval labeled package scanning; no routing or victim execution."""
+"""Pre-retrieval labeled package scanning."""
 import argparse
 import json
 from pathlib import Path
