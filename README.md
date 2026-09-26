@@ -42,22 +42,11 @@ export SKILLROUTER_REPO=/path/to/skillrouter
 export SKILLSBENCH_REPO=/path/to/skillsbench
 ```
 
-Configure external benchmark repositories, model access, and experiment-specific
-dependencies separately. Azure OpenAI is also supported through
-`AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_API_KEY` (or `AZURE_OPENAI_KEY`), and optional
-`AZURE_OPENAI_API_VERSION`; model names must match Azure deployments.
-
-Real-execution experiments require an `experiment.json` specifying an
-experiment-provided isolated runtime and execution evaluator. See the
-[execution contract](docs/execution_contract.md) for configuration.
-
 ## Router and Benchmark
 
 The main experiment uses the **full SkillRouter pipeline**:
 
-- Encoder: `pipizhao/SkillRouter-Embedding-0.6B`
-- Reranker: `pipizhao/SkillRouter-Reranker-0.6B`
-- Default retrieval window: **20**
+- Encoder + reranker: `pipizhao/SkillRouter-Embedding-0.6B` + `pipizhao/SkillRouter-Reranker-0.6B`
 
 The encoder retrieves candidates and the reranker produces the final ranking.
 Hit@1 is measured from that final ranking. Transfer experiments also support
@@ -69,7 +58,7 @@ SkillRouter’s external benchmark checkout must provide
 Select `--tier easy` or `--tier hard`; Hard includes topically related distractor
 skills for a more challenging retrieval setting.
 
-## Task Clusters and Pinned Split
+## Task Clusters
 
 The 75 benchmark tasks are organized into eight semantic clusters. CORSA optimizes
 one skill across each cluster. The fixed task-to-cluster split used in the reported
@@ -93,9 +82,6 @@ python -m experiments.section_2_2_categorize.categorize \
   --model YOUR_CATEGORIZATION_MODEL \
   --out_dir results/categorization
 ```
-
-Regenerated assignments may differ. Use the provided mapping to reproduce the
-reported split, or select another mapping with `--categories-json`.
 
 ## Stage A — Retrieval Optimization
 
@@ -237,14 +223,3 @@ python -B -m experiments.real_eval_ourmethod.run --help
 python -B -m experiments.router_transfer.run --help
 python -B -m experiments.defenses.run --help
 ```
-
-## Responsible Release
-
-This repository provides the CORSA optimization, routing, and evaluation pipeline.
-Operational attack payloads and generated experimental artifacts are not included
-in this release.
-
-## Citation
-
-**“Surviving the Router: Optimizing Skill Injections for Retrieval and Execution.”**
-Citation details forthcoming.
