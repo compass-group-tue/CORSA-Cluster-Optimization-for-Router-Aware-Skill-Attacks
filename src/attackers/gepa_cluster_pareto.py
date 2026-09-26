@@ -1,7 +1,6 @@
 """Cluster-aware reflective search with task-leader selection and field merges.
 
 Acceptance scores the complete cluster; minibatches select feedback only.
-The runtime/evaluator are supplied by the scoring callback, never inferred here.
 """
 from __future__ import annotations
 import json
