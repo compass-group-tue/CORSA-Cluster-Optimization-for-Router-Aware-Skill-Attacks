@@ -1,10 +1,4 @@
-"""Central path configuration.
-
-All locations are derived from the repository root (which this file locates
-automatically) or from environment variables, so nothing hard-codes an absolute
-machine path. Override any of these with the corresponding environment variable
-when reproducing on your own system.
-"""
+"""Central path configuration."""
 from __future__ import annotations
 
 import os
