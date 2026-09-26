@@ -1,4 +1,4 @@
-"""Public execution contracts. No experiment-specific success detector is supplied."""
+"""Public execution contracts."""
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
