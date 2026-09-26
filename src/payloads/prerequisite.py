@@ -1,7 +1,4 @@
-"""Text-only skill rendering. Experiment resources are configured separately.
-
-No framing or executable resource is bundled or implicitly inserted.
-"""
+"""Text-only skill rendering. Experiment resources are configured separately."""
 from src.infra.artifacts import validate_skill
 
 
