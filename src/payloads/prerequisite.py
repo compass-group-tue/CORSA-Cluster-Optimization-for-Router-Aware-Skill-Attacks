@@ -1,4 +1,4 @@
-"""Text-only skill rendering. Experiment resources are configured separately."""
+"""Utilities for rendering skill instructions."""
 from src.infra.artifacts import validate_skill
 
 
