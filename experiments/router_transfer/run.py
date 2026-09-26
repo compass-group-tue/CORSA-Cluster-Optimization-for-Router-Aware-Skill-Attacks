@@ -1,4 +1,4 @@
-"""Frozen retrieval-only transfer; real execution uses the separate run_real CLI."""
+"""Frozen retrieval-only transfer; real execution uses experiments.real_eval_ourmethod.run."""
 import argparse
 import json
 from pathlib import Path
@@ -26,7 +26,7 @@ def parse_args(argv=None):
     parser.set_defaults(router=None)
     args = parser.parse_args(argv)
     if args.router is not None:
-        parser.error('Use --target-router for retrieval matrices; --router belongs to run_real')
+        parser.error('Use --target-router for retrieval matrices; --router belongs to experiments.real_eval_ourmethod.run')
     return args
 
 

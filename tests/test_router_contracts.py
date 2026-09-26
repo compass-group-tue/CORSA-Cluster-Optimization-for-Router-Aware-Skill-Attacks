@@ -103,11 +103,9 @@ class RouterContracts(unittest.TestCase):
         args=parse_args(['--winner','unused','--target-router','bm25','--out-dir','unused'])
         self.assertFalse(hasattr(args,'experiment'))
 
-    def test_real_transfer_delegates_to_existing_execution_contract(self):
-        from experiments.router_transfer.run_real import main
-        from experiments.real_eval_ourmethod.run import main as real_main
+    def test_real_transfer_requires_execution_contract(self):
+        from experiments.real_eval_ourmethod.run import main
         from src.exec_env.contracts import EvaluatorUnavailable
-        self.assertIs(main,real_main)
         with patch('experiments.real_eval_ourmethod.run.load_experiment',side_effect=EvaluatorUnavailable('required')) as load, \
              patch('experiments.real_eval_ourmethod.run.build_router_from_args') as router:
             with self.assertRaises(EvaluatorUnavailable):

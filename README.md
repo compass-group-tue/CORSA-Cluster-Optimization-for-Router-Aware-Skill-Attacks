@@ -160,7 +160,7 @@ python -m experiments.router_transfer.run \
 
 This produces retrieval/Hit@1 transfer results. Multiple frozen source sets can
 form source-to-target matrices using `--sources`. Execution-enabled router
-transfer uses `python -m experiments.router_transfer.run_real` with the same
+transfer uses `python -m experiments.real_eval_ourmethod.run` with the same
 arguments as frozen evaluation above.
 
 ## Defense Evaluation
