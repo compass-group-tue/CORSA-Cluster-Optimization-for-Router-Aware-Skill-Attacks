@@ -16,7 +16,7 @@ starts from the Stage-A winner and continues GEPA optimization using
 `Hit(t, S) × Exec(t, S)`: retrieval and execution must succeed on the same task.
 
 ```text
-Related task cluster
+Related Task Cluster
         ↓
 Stage A: Retrieval Optimization
         ↓
@@ -24,7 +24,8 @@ Stage-A Winner
         ↓
 Stage B: End-to-End Optimization
         ↓
-Frozen Evaluation: Hit@1 / ASR / Utility
+Stage-B Winner
+    Hit@1 × Exec
 ```
 
 ## Installation and Configuration
@@ -136,12 +137,13 @@ python -m experiments.phase_1_2_gepa.run \
   --out-dir results/stage-b
 ```
 
-Output: `results/stage-b/stage_b_winner.json`.
+The Stage-B winner is the final optimized CORSA skill, saved to
+`results/stage-b/stage_b_winner.json`.
 
 ## Frozen Evaluation and Transfer
 
-Evaluate optimized skills without further optimization across victim models,
-scaffolds, routers, and benchmark settings:
+Hold the Stage-B winner fixed for downstream evaluation across victim models,
+scaffolds, routers, and benchmark settings, without further optimization:
 
 ```bash
 python -m experiments.real_eval_ourmethod.run \
