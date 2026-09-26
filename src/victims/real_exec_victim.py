@@ -1,4 +1,4 @@
-"""Victim adapter: no host process launcher and no implicit execution backend."""
+"""Victim execution adapter."""
 from copy import deepcopy
 from src.exec_env.contracts import ExecutionEvidence
 
